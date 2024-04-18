@@ -5,8 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RaceExplorer.Views"
         mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
+        Title="ShellView" Height="900" Width="1600">
     <Grid>
-        
+        <Grid.ColumnDefinitions>    
+            
+            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TabControl Grid.Column ="1">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <!--<Image Source="/WpfTutorialSamples;component/Images/bullet_blue.png" />-->
+                        <TextBlock Text="Blue" Foreground="Blue" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <TextBlock>lofjndsjfdankjandslkjfn</TextBlock>
+                    <TextBlock>AAAAAAA</TextBlock>
+                </Grid>
+                <!--<Label Content="Content goes here..." />-->
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <!--<Image Source="/WpfTutorialSamples;component/Images/bullet_red.png" />-->
+                        <TextBlock Text="Red" Foreground="Red" />
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <!--<Image Source="/WpfTutorialSamples;component/Images/bullet_green.png" />-->
+                        <TextBlock Text="Green" Foreground="Green" />
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+
+        <Label Content="Data Selector"/>
+        <Grid Margin="0,28,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24" Name="profileListTitle" />
+                <RowDefinition Height="240" Name="profileList" /> 
+                <RowDefinition Height="24" Name="RaceListTitle" />
+                <RowDefinition Height="240" Name="RaceList" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock>Select Profile : </TextBlock>
+            <ListBox 
+                ItemsSource="{Binding}" 
+                ScrollViewer.VerticalScrollBarVisibility="Visible"
+                Grid.Row="1" >
+            </ListBox>
+
+            <TextBlock Grid.Row="2">Select Race :</TextBlock>
+            <ListBox 
+                ItemsSource="{Binding ProfileList}" 
+                ScrollViewer.VerticalScrollBarVisibility="Visible"
+                Grid.Row="3"
+                Name ="RaceListBox">
+
+                <!--<ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Title}" />
+                            <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>-->
+
+            </ListBox>
+
+        </Grid>
+
     </Grid>
 </Window>
