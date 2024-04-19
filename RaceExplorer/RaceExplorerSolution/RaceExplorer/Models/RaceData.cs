@@ -26,16 +26,21 @@ namespace RaceExplorer.Models
         public void getDataFrom(string path)
         {
 
-            //string filePath = Application.dataPath + "/UserStatistics/" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".txt";
-            using (StreamReader sw = new StreamReader(path))
+            const Int32 BufferSize = 1024;
+            using (var fileStream = File.OpenRead(path))
+            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
             {
-                foreach (var element in chart)
+                String line;
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    sw.ReadLine();
+                    // Process line
+                    ChartDataPoint chartDataPoint = new ChartDataPoint();
+                    chartDataPoint.GetFromString(line);
+                    chart.Add(chartDataPoint);
                 }
             }
 
-            
+
         }
 
         public void makeChartImage()
