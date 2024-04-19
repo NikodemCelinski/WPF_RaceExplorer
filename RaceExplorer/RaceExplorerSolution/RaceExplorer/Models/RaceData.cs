@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RaceExplorer.Models
 {
-    internal class RaceData
+    public class RaceData
     {
         //int _totalObstacles = 12;
 
@@ -21,7 +21,13 @@ namespace RaceExplorer.Models
         }
 
 
-        ObservableCollection<ChartDataPoint> chart = new ObservableCollection<ChartDataPoint>();
+        private ObservableCollection<ChartDataPoint> _chart = new ObservableCollection<ChartDataPoint>();
+
+        public ObservableCollection<ChartDataPoint> Chart
+        {
+            get { return _chart; }
+            set { _chart = value; }  
+        }
 
         public void getDataFrom(string path)
         {
@@ -36,7 +42,7 @@ namespace RaceExplorer.Models
                     // Process line
                     ChartDataPoint chartDataPoint = new ChartDataPoint();
                     chartDataPoint.GetFromString(line);
-                    chart.Add(chartDataPoint);
+                    _chart.Add(chartDataPoint);
                 }
             }
 

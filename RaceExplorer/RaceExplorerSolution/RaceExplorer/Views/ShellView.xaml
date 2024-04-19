@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RaceExplorer.Views"
         mc:Ignorable="d"
-        Title="ShellView" Height="900" Width="1600">
+        d:DataContext="{d:DesignInstance Type=local:ShellView}"
+        Title="ShellView" Height="900" Width="1600"
+        >
+        
+    
     <Grid>
         <Grid.ColumnDefinitions>    
             
@@ -63,7 +67,7 @@
 
             <TextBlock Grid.Row="2">Select Race :</TextBlock>
             <ListBox 
-                ItemsSource="{Binding ProfileList}" 
+                ItemsSource="{Binding Path=ChartCollection}" 
                 ScrollViewer.VerticalScrollBarVisibility="Visible"
                 Grid.Row="3"
                 Name ="RaceListBox">
