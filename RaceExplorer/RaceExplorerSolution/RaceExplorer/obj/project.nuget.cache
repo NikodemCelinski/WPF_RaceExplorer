@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZSsvuHK4KhKeTXgMufLklcCUyo4KrbdcnsUeLu/9oK/ObjeMAzvbFVXmoG4pWfSaYfWtKfLNWYYx6o6yQ2c+EA==",
+  "dgSpecHash": "Ak5Ws6UHpqyl8WGQGMrnapLJN8RxemgdvOE+0re2thEfJ775Wf6GTNJyjK3ItyfsuHHB7n50Pe7phFq5ssmGlA==",
   "success": true,
   "projectFilePath": "D:\\projekty\\mag\\WPF_RaceExplorer\\WPF_RaceExplorer\\RaceExplorer\\RaceExplorerSolution\\RaceExplorer\\RaceExplorer.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,9 @@
     "C:\\Users\\SirRe\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\SirRe\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\SirRe\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.37\\microsoft.xaml.behaviors.wpf.1.1.37.nupkg.sha512",
+    "C:\\Users\\SirRe\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
+    "C:\\Users\\SirRe\\.nuget\\packages\\oxyplot.wpf\\2.1.2\\oxyplot.wpf.2.1.2.nupkg.sha512",
+    "C:\\Users\\SirRe\\.nuget\\packages\\oxyplot.wpf.shared\\2.1.2\\oxyplot.wpf.shared.2.1.2.nupkg.sha512",
     "C:\\Users\\SirRe\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\SirRe\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\SirRe\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",

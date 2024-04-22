@@ -14,7 +14,7 @@ namespace RaceExplorer.Models
         public RaceExplorerEnums.chartObstacleEvent raceEvent;
         public int dodgeStreak;
         public int dodgeCount;
-
+        
 
         public void GetFromString(string dataString)
         {

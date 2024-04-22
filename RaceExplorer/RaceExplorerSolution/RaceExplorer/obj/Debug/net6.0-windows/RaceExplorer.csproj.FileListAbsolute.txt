@@ -26,3 +26,8 @@ D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolut
 D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\obj\Debug\net6.0-windows\RaceExplorer.pdb
 D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\obj\Debug\net6.0-windows\RaceExplorer.genruntimeconfig.cache
 D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\obj\Debug\net6.0-windows\ref\RaceExplorer.dll
+D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\bin\Debug\net6.0-windows\OxyPlot.dll
+D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\bin\Debug\net6.0-windows\OxyPlot.Wpf.dll
+D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\bin\Debug\net6.0-windows\OxyPlot.Wpf.Shared.dll
+D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\obj\Debug\net6.0-windows\Views\StatView.g.cs
+D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\obj\Debug\net6.0-windows\Views\StatView.baml

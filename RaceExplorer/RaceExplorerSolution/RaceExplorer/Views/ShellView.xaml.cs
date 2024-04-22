@@ -21,33 +21,24 @@ namespace RaceExplorer.Views
     /// </summary>
     public partial class ShellView : Window
     {
-        string testChartPath = @"D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\Charts\level2PitStops2024-04-19-00-02\ChartDataList.txt";
-        //RaceData raceData = new RaceData();
-        //ObservableCollection<ChartDataPoint> raceChartData = new ObservableCollection<ChartDataPoint>();
 
-        private RaceData raceData = new RaceData();
 
-        public RaceData PropRaceData
+
+        private string _totalRaceObstacles = "TOTAL";
+        public string TotalRaceObstacles
         {
-            get { return raceData = new RaceData(); }
-            set { raceData = value; }
+            //get { return raceData.TotalObstacles.ToString();}
+            get { return _totalRaceObstacles; }
         }
 
-        private ObservableCollection<ChartDataPoint> _chartCollection;
 
-        public ObservableCollection<ChartDataPoint> ChartCollection
-        {
-            get { return _chartCollection; }
-            set { _chartCollection = value; }
-        }
 
 
 
         public ShellView()
         {
             InitializeComponent();
-            raceData.getDataFrom(testChartPath);
-            _chartCollection = raceData.Chart;
+
         }
     }
 }

@@ -4,20 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RaceExplorer.Views"
+        xmlns:vmodels="clr-namespace:RaceExplorer.ViewModels"
+        xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance Type=local:ShellView}"
+        d:DataContext="{d:DesignInstance Type=vmodels:ShellViewModel}"
         Title="ShellView" Height="900" Width="1600"
         >
-        
-    
+
+
     <Grid>
-        <Grid.ColumnDefinitions>    
-            
+        <Grid.ColumnDefinitions>
+
             <ColumnDefinition Width="240" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <TabControl Grid.Column ="1">
+
+
+
+
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -26,8 +32,56 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid>
-                    <TextBlock>lofjndsjfdankjandslkjfn</TextBlock>
-                    <TextBlock>AAAAAAA</TextBlock>
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="240" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"  />
+                        <RowDefinition Height="240"  />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="241*" />
+                            <ColumnDefinition Width="383*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="40"  />
+                            <RowDefinition Height="40"  />
+                            <RowDefinition Height="40"  />
+                            <RowDefinition Height="40"  />
+                            <RowDefinition Height="40"  />
+                            <RowDefinition Height="*"  />
+                        </Grid.RowDefinitions>
+
+                        <Button x:Name="LoadStatView">
+                            LOAD
+                        </Button>
+
+                    </Grid>
+
+
+                    <TextBlock Text="{Binding PropRaceData.TotalObstacles}"></TextBlock>
+
+                    <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" 
+                        x:Name="ActiveItem" />
+
+                    <!--<GroupBox Grid.Row="0" Grid.Column="1">
+                        <oxy:PlotView Model ="{Binding MyModel}" Name="plot"/>
+                    </GroupBox>-->
+
                 </Grid>
                 <!--<Label Content="Content goes here..." />-->
             </TabItem>
@@ -53,12 +107,12 @@
         <Grid Margin="0,28,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="24" Name="profileListTitle" />
-                <RowDefinition Height="240" Name="profileList" /> 
+                <RowDefinition Height="240" Name="profileList" />
                 <RowDefinition Height="24" Name="RaceListTitle" />
                 <RowDefinition Height="240" Name="RaceList" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <TextBlock>Select Profile : </TextBlock>
+            <TextBlock>Select Profile :</TextBlock>
             <ListBox 
                 ItemsSource="{Binding}" 
                 ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -71,6 +125,8 @@
                 ScrollViewer.VerticalScrollBarVisibility="Visible"
                 Grid.Row="3"
                 Name ="RaceListBox">
+
+
 
                 <!--<ListBox.ItemTemplate>
                     <DataTemplate>
