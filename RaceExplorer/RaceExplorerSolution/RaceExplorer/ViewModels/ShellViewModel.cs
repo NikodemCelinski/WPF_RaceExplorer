@@ -31,9 +31,9 @@ namespace RaceExplorer.ViewModels
             set { _profileListData = value; }
         }
 
-        private List<string> _profileList = new List<string>();
+        private ObservableCollection<string> _profileList = new ObservableCollection<string>();
 
-        public List<string> ProfileList
+        public ObservableCollection<string> ProfileList
         {
             get { return _profileList; }
             
@@ -52,27 +52,44 @@ namespace RaceExplorer.ViewModels
             set { raceData = value; }
         }
 
-        private ObservableCollection<ChartDataPoint> _chartCollection = new ObservableCollection<ChartDataPoint>();
+        private ObservableCollection<string> _racesCollection = new ObservableCollection<string>();
 
-        public ObservableCollection<ChartDataPoint> ChartCollection
+        public ObservableCollection<string> RacesCollection
         {
-            get { return _chartCollection; }
-            set { _chartCollection = value; }
+            get { return _racesCollection; }
+            set { _racesCollection = value; }
         }
+
+        //private string _selectedProfile;
+
+        //public string SelectedProfile
+        //{
+        //    get { return _selectedProfile; }
+        //    set { _selectedProfile = value; }
+        //}
+
+        //private string _selectedRaceFolder;
+
+        //public string SelectedRaceFolder
+        //{
+        //    get { return _selectedRaceFolder; }
+        //    set { _selectedRaceFolder = value; }
+        //}
 
 
         public ShellViewModel()
         {
             _profileList = getProfileNames();
             raceData.getDataFrom(testChartPath);
-            _chartCollection = raceData.Chart;
+            _racesCollection = getRaceDirsInProfile();
         }
 
+        
 
-        public List<string> getProfileNames()
+        public ObservableCollection<string> getProfileNames()
         {
             string profilePath = @"D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\dummyProfiles";
-            List<string> profileList = new List<string>();
+            ObservableCollection<string> profileList = new ObservableCollection<string>();
 
 
 
@@ -90,6 +107,31 @@ namespace RaceExplorer.ViewModels
             return profileList;
 
         }
+
+        public ObservableCollection<string> getRaceDirsInProfile()
+        {
+            if (ExplorerPath.profileName == "")
+                return null;
+
+            ExplorerPath.updatePath();
+
+            string profilePath = @"D:\projekty\mag\WPF_RaceExplorer\WPF_RaceExplorer\RaceExplorer\RaceExplorerSolution\RaceExplorer\dummyProfiles";
+            ObservableCollection<string> dirList = new ObservableCollection<string>();
+
+
+
+            DirectoryInfo directoryInfo = new DirectoryInfo(ExplorerPath.profilePath);
+            DirectoryInfo[] raceFiles = directoryInfo.GetDirectories();
+            dirList.Clear();
+            foreach (DirectoryInfo dirInfo in raceFiles)
+            {
+                dirList.Add(dirInfo.Name.Split(".")[1]);
+            }
+
+            return dirList;
+        }
+
+        
 
         public void LoadStatView()
         {

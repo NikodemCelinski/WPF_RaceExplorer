@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RaceExplorer.ViewModels;
 
 namespace RaceExplorer.Views
 {
@@ -31,14 +32,52 @@ namespace RaceExplorer.Views
             get { return _totalRaceObstacles; }
         }
 
+        private string _selectedProfile;
 
+        public string SelectedProfile
+        {
+            get { return _selectedProfile; }
+            set { _selectedProfile = value; }
+        }
+
+        private string _selectedRaceFolder;
+
+        public string SelectedRaceFolder
+        {
+            get { return _selectedRaceFolder; }
+            set { _selectedRaceFolder = value; }
+        }
 
 
 
         public ShellView()
         {
             InitializeComponent();
-
         }
+
+        private void RaceListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox lb = sender as ListBox;
+            ListBoxItem lbi = lb.SelectedItem as ListBoxItem;
+            TextBlock tb = (TextBlock)lbi.Content;
+            SelectedRaceFolder = tb.Text;
+
+            
+            _ = SelectedRaceFolder == null ? ExplorerPath.profileChildName = "" : ExplorerPath.profileChildName = SelectedRaceFolder;
+            ExplorerPath.updatePath();
+        }
+
+        private void ProfileListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox lb = sender as ListBox;
+            //ListBoxItem lbi = lb.SelectedItem as ListBoxItem;
+            //TextBlock tb = (TextBlock)lbi.Content;
+            SelectedProfile = lb.SelectedItem.ToString();
+
+
+            _ = SelectedProfile == null ? ExplorerPath.profileName = "" : ExplorerPath.profileName = SelectedProfile;
+            ExplorerPath.updatePath();
+        }
+
     }
 }

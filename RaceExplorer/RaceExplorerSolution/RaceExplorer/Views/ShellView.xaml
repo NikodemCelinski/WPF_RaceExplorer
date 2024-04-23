@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:cal="http://www.caliburnproject.org"
         xmlns:local="clr-namespace:RaceExplorer.Views"
         xmlns:vmodels="clr-namespace:RaceExplorer.ViewModels"
         xmlns:oxy="http://oxyplot.org/wpf"
@@ -114,17 +116,22 @@
             </Grid.RowDefinitions>
             <TextBlock>Select Profile :</TextBlock>
             <ListBox 
-                ItemsSource="{Binding}" 
+                ItemsSource="{Binding ProfileList}" 
+                SelectedItem="{Binding SelectedProfile, Mode=TwoWay}"
+                SelectionChanged="ProfileListBox_SelectionChanged"
                 ScrollViewer.VerticalScrollBarVisibility="Visible"
                 Grid.Row="1" >
             </ListBox>
 
             <TextBlock Grid.Row="2">Select Race :</TextBlock>
             <ListBox 
-                ItemsSource="{Binding Path=ChartCollection}" 
+                ItemsSource="{Binding RacesCollection}"
+                SelectedItem="{Binding SelectedRaceFolder, Mode=TwoWay}"
+                SelectionChanged="RaceListBox_SelectionChanged" 
                 ScrollViewer.VerticalScrollBarVisibility="Visible"
                 Grid.Row="3"
                 Name ="RaceListBox">
+
 
 
 
